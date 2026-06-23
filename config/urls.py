@@ -28,12 +28,20 @@ urlpatterns = [
         include("accounts.urls")
     ),
     path(
+    "api/projects/",
+    include("projects.urls")
+    ),
+    path(
         "api/auth/login/",
         TokenObtainPairView.as_view()
     ),
     path(
         "api/auth/refresh/",
         TokenRefreshView.as_view()
+    ),
+    path(
+        "api/devops/",
+        include( "devops.urls" )
     ),
 
 ]
